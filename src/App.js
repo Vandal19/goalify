@@ -10,8 +10,8 @@ function App() {
         <Routes>
           <div className="container">
           <Route path="/" element={<Dashboard />} />
-          <Route path="/" element={<Login />} />
-          <Route path="/" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           </div>
           </Routes>
       </Router>
