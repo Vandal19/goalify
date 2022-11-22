@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 const Header = () => {
   return (
     <header className='header'>
-      Hello
       <div className='logo'>
         <Link to='/'>GoalSetter</Link>
       </div>
