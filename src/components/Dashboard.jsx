@@ -15,9 +15,9 @@ const Dashboard = () => {
   const { goals, isLoading, isError, message } = useSelector((state) => state.goals)
 
   useEffect(() => {
-    // if (isError) {
-    //   console.log(message)
-    // }
+    if (isError) {
+      console.log(message)
+    }
 
     if (!user) {
       navigate("/login");
@@ -46,7 +46,7 @@ const Dashboard = () => {
         {goals.length > 0 ? (
         <div className="goals">
           {goals.map((goal) => (
-            <GoalItem key={goal.id} goal={goal} />
+            <GoalItem key={goal._id} goal={goal} />
           ))}
         </div>) : (
           <h3>
