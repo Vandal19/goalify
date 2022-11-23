@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import GoalForm from "./GoalForm";
+import GoalItem from "./GoalItem";
 import Loading from "./Loading";
 import { getGoals, reset } from "../features/goals/goalSlice"
 
@@ -40,6 +41,19 @@ const Dashboard = () => {
         <p>Goals DashBoard</p>
       </section>
       <GoalForm />
+
+      <section className="content">
+        {goals.length > 0 ? (
+        <div className="goals">
+          {goals.map((goal) => (
+            <GoalItem key={goal.id} goal={goal} />
+          ))}
+        </div>) : (
+          <h3>
+          You have not set any goals
+          </h3>
+        )}
+      </section>
     </>
   );
 };
